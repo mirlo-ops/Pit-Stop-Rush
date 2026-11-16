@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11192e">
+  <title>Pit Stop Rush — гараж</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css?v=garage-systems-1">
+  <link rel="stylesheet" href="ui-redesign.css?v=1">
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="checkers" viewBox="0 0 64 64"><path d="M6 7h15l-3 15H3zm15 0h15l-3 15H18zm15 0h15l-3 15H33zM3 22h15l-3 15H0zm30 0h15l-3 15H30zM15 37h15l-3 15H12zm30 0h15l-3 15H42z"/></symbol>
+    <symbol id="gear" viewBox="0 0 48 48"><path d="m20 2 8 0 1.2 5.4c1.5.4 2.9 1 4.2 1.8L38 6.3l5.7 5.7-2.9 4.6c.8 1.3 1.4 2.7 1.8 4.2L48 22v8l-5.4 1.2a19 19 0 0 1-1.8 4.2l2.9 4.6-5.7 5.7-4.6-2.9a19 19 0 0 1-4.2 1.8L28 50h-8l-1.2-5.4a19 19 0 0 1-4.2-1.8L10 45.7 4.3 40l2.9-4.6a19 19 0 0 1-1.8-4.2L0 30v-8l5.4-1.2c.4-1.5 1-2.9 1.8-4.2L4.3 12 10 6.3l4.6 2.9c1.3-.8 2.7-1.4 4.2-1.8zM24 15a10 10 0 1 0 0 20 10 10 0 0 0 0-20" fill-rule="evenodd"/></symbol>
+    <symbol id="helmet" viewBox="0 0 100 100"><path d="M12 48c0-23 17-40 39-40 23 0 39 16 39 39v15c0 18-15 30-39 30S12 80 12 62z" fill="#ff9b12" stroke="#090e20" stroke-width="7"/><path d="M19 48q31 12 64 0v13q-2 19-32 20-30-1-32-20z" fill="#121a31" stroke="#07101d" stroke-width="5"/><path d="M25 31q8-16 26-16" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/><path d="m61 23 15-2-3 8-15 2z" fill="#fff"/></symbol>
+    <symbol id="stopwatch" viewBox="0 0 64 64"><path d="M25 2h14v7H25zm24 11 5-4 4 5-5 4a25 25 0 1 1-4-5zM32 16a18 18 0 1 0 0 36 18 18 0 0 0 0-36zm-2 3h5v14l-9 7-3-4 7-5z"/></symbol>
+    <symbol id="calendar" viewBox="0 0 48 48"><path d="M10 3h5v6h18V3h5v6h4a5 5 0 0 1 5 5v28a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V14a5 5 0 0 1 5-5h4zm-3 17v21h34V20zm4 5h6v6h-6zm10 0h6v6h-6zm10 0h6v6h-6zM11 34h6v5h-6zm10 0h6v5h-6z"/></symbol>
+    <symbol id="upgrade-wing" viewBox="0 0 128 88"><path fill="#0a1228" d="M11 42 28 24l72-7 18 18-8 37-31 11-67-17z"/><path fill="#ff9e12" d="m18 43 15-13 63-5 13 12-5 24-24 10-62-13z"/><path fill="#ecf7ff" d="m34 36 61-5 7 6-65 5z"/><path fill="#141f3a" d="m32 48 67-6-4 11-60 8z"/><path fill="#ffcc1a" d="m35 54 56-5-2 4-54 7z"/><path fill="#ffda1a" d="m77 20 9-15 11 13-6 0 0 15-9 0 0-13z"/><path fill="#fff" d="M74 43h7l-1 6h-7zm7-1h7l-1 6h-7zm-1 6h7l-1 6h-7zm-14 1h7l-1 6h-7z"/></symbol>
+  </svg>
+  <main class="garage" aria-label="Гараж команды">
+    <header class="topbar">
+      <div class="title-plate"><span class="title-mark"><svg><use href="#checkers"/></svg></span><h1>ГАРАЖ</h1></div>
+      <div class="top-right">
+        <div class="wallet hud"><img class="coin currency-icon" src="assets/currency.png" alt=""><div><span class="hud-caption">МОНЕТЫ</span><strong id="balance">24 800</strong></div><button class="add-coins" aria-label="Пополнить демо-баланс"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button></div>
+        <div class="clock hud"><svg aria-hidden="true"><use href="#calendar"/></svg><time id="date-time"></time></div>
+        <button class="settings hud" data-open="settings"><svg aria-hidden="true"><use href="#gear"/></svg> <span>НАСТРОЙКИ</span></button>
+      </div>
+    </header>
+    <div class="zone-viewport" aria-label="Зоны гаража">
+    <div class="zone-scene">
+      <div class="pit-background" role="img" aria-label="Пит-бокс с командой и болидом"></div>
+      <button type="button" class="zone zone-workshop" aria-label="Мастерская" title="Мастерская"><img src="assets/zone-workshop-named.png" alt="" draggable="false"></button>
+      <button type="button" class="zone zone-lounge" aria-label="Комната персонала" title="Комната персонала"><img src="assets/zone-lounge-named.png" alt="" draggable="false"></button>
+      <button type="button" class="zone zone-tyres" aria-label="Магазин шин" title="Магазин шин"><img src="assets/zone-tyres-named.png" alt="" draggable="false"></button>
+      <button type="button" class="zone zone-trophy" aria-label="Рейтинг" title="Рейтинг"><img src="assets/zone-trophy-named.png" alt="" draggable="false"></button>
+    </div>
+    </div>
+    <span class="scene-hint" aria-hidden="true">ПРОКРУТИ ГАРАЖ ↔</span>
+    <nav class="actions" aria-label="Разделы гаража">
+      <button class="action-card upgrade-card" data-open="upgrades"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="card-title">ПРОКАЧКА</span><span class="upgrade-illustration" aria-hidden="true"><svg><use href="#upgrade-wing"/></svg></span><span class="card-hint">УЛУЧШИТЬ КОМАНДУ</span></button>
+      <button class="action-card staff-card" data-open="staff"><svg class="crew-illustration" aria-hidden="true"><use href="#helmet"/></svg><span class="card-title">ПЕРСОНАЛ</span><span class="card-cta">НАЙТИ МЕХАНИКА</span><span class="card-hint">СОБРАТЬ КОМАНДУ</span></button>
+      <section class="action-card modes-card" aria-label="Выбор режима"><div class="mode-label"><svg aria-hidden="true"><use href="#checkers"/></svg><span>ГОНКИ</span></div><div class="mode-buttons"><button data-mode="race"><svg><use href="#checkers"/></svg><span>ПОЛНАЯ ГОНКА</span></button><button data-mode="pitstop"><svg><use href="#stopwatch"/></svg><span>ОДИНОЧНЫЙ<br>ПИТ-СТОП</span></button></div></section>
+    </nav>
+  </main>
+  <div class="overlay" hidden>
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <div class="dialog-heading"><h2 id="dialog-title"></h2><div class="dialog-tools"><div class="dialog-balance" aria-label="Монеты"><img class="currency-icon dialog-coin" src="assets/currency.png" alt=""><strong id="dialog-balance">24 800</strong></div><button class="close" aria-label="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button></div></div>
+      <p class="notice" aria-live="polite"></p>
+      <div id="dialog-content"></div>
+    </section>
+  </div>
+  <script src="garage-model.js?v=garage-systems-1"></script>
+  <script src="ui-icons.js?v=1"></script>
+  <script src="app.js?v=garage-ui-1"></script>
+</body>
+</html>

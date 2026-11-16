@@ -1,0 +1,80 @@
+/* Pit-wall interface: the illustrated scene and game state remain separate. */
+:root{--ui-ink:#0b142e;--ui-panel:#172749;--ui-line:#6686b9;--ui-sky:#8ddcff;--ui-yellow:#ffd21b;--ui-orange:#ff9714;--ui-muted:#afc2df}
+
+/* Three garage controls keep the proportions and colors of the concept art. */
+.action-card{border-color:#6ccfff;box-shadow:inset 0 .14cqw 0 #e0f8ff,0 .3cqw 0 #113875,0 .5cqw .8cqw #08102699;background:linear-gradient(153deg,#162753 5%,#1a2249 60%,#4a257d 100%)}
+.action-card::before{content:'';position:absolute;inset:auto 0 0;height:24%;background:repeating-linear-gradient(120deg,#8b5cc122 0 2.2cqw,transparent 2.2cqw 4.4cqw);pointer-events:none}
+.action-card::before{z-index:0}.action-card .card-title,.action-card .card-hint,.action-card .bars,.action-card .upgrade-illustration,.action-card .crew-illustration{z-index:1}.mode-label,.mode-buttons{position:relative;z-index:1}
+.upgrade-card .card-title,.staff-card .card-title{letter-spacing:0}.card-hint{color:#bbd5f2;letter-spacing:.06cqw}
+.upgrade-illustration{right:2%;top:18%;width:35%;height:65%;transform:none;filter:drop-shadow(0 .3cqw .15cqw #070d22)}.upgrade-card .card-title{font-size:2.8cqw}
+.upgrade-illustration svg{width:100%;height:100%}.crew-illustration{width:29%;left:5%;bottom:3%;height:88%}
+.card-cta,.mode-buttons button{box-shadow:inset 0 .18cqw 0 #fff4a0,0 .3cqw 0 #aa6500;color:#101a30}
+.mode-buttons button{font-style:normal;letter-spacing:-.025cqw}.mode-buttons svg{opacity:.95}
+
+/* Dialogs are game equipment panels, with one prominent action color. */
+.overlay{background:#071127c9;backdrop-filter:blur(2px)}
+.dialog{position:relative;width:min(800px,95vw);max-height:min(86dvh,870px);padding:24px 27px 27px;border:3px solid #8edfff;border-radius:25px;background:linear-gradient(145deg,#253c6a 0%,#152444 27%,#101b38 100%);box-shadow:inset 0 2px 0 #e1f9ff,0 7px 0 #0b2151,0 17px 35px #020a1bcc}
+.dialog{scrollbar-width:thin;scrollbar-color:#7eb9e5 #14213f}.dialog::-webkit-scrollbar{width:8px}.dialog::-webkit-scrollbar-track{background:#14213f;border-radius:10px}.dialog::-webkit-scrollbar-thumb{background:#7eb9e5;border-radius:10px}
+.dialog::after{content:'';position:absolute;right:25px;bottom:13px;width:68px;height:12px;opacity:.3;background:repeating-linear-gradient(120deg,#77cffa 0 7px,transparent 7px 13px);pointer-events:none}
+.dialog-heading{top:-24px;z-index:4;gap:16px;min-height:67px;margin:-8px -8px 19px;padding:12px 8px 14px;border-bottom:2px solid #6687b8;background:linear-gradient(180deg,#223967 0%,#1b2d54 82%,#1b2d54 100%);box-shadow:0 8px 13px #0a1631b0}
+.dialog-heading h2{max-width:calc(100% - 180px);font:italic 32px/1.07 Russo,sans-serif;letter-spacing:.01em;text-shadow:0 3px #0b1735}
+.dialog-heading h2::before{content:'';display:block;width:47px;height:5px;margin-bottom:9px;background:linear-gradient(90deg,#ffce18 0 68%,#fc7e18 68%);transform:skewX(-20deg)}
+.dialog-tools{display:flex;align-items:center;gap:10px;margin-left:auto}.dialog-balance{display:flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #6c82aa;border-radius:11px;background:#101b37;color:#fff;font:15px/1 Russo,sans-serif;white-space:nowrap}.dialog-balance span{display:grid;place-items:center;width:23px;height:23px;border:2px solid #ffcc37;border-radius:50%;background:#e99809;color:#ffea77;font:13px/1 Russo,sans-serif}.dialog-balance strong{font-weight:normal}
+.close{width:43px;height:43px;border:2px solid #a8c5ed;border-radius:12px;background:#283c66;box-shadow:0 3px 0 #0c1935;color:#fff}.close:hover{background:#42639a}.dialog-intro{margin:0 0 18px;color:#c4d3ec;font:15px/1.45 system-ui,sans-serif}.local-note{color:#9db5d7;font:13px/1.45 system-ui,sans-serif}
+.notice:not(:empty){top:50px;border-color:#c79d39;background:#493b19;color:#ffea9d;box-shadow:0 5px 14px #09102599}
+
+/* Service rows: labels, level segments and prices share a clear reading order. */
+.list-heading{display:flex;justify-content:space-between;padding:0 14px 7px;color:#9db6dc;font:10px/1 Russo,sans-serif;letter-spacing:.1em}
+.item-list{display:block;overflow:hidden;border:2px solid #4d6c9f;border-radius:15px;background:#101d3b}
+.item{min-height:80px;gap:16px;margin:0;padding:10px 14px;border:0;border-bottom:1px solid #405883;border-radius:0;background:transparent}
+.item:last-child{border-bottom:0}.item:hover{background:#1c3156}
+.item-icon{width:56px;height:56px;border:2px solid #5f86bf;border-radius:14px;background:linear-gradient(145deg,#385789,#20375f);color:#d8f2ff;box-shadow:inset 0 2px 0 #a7d0ff55,0 3px 0 #080f26}
+.garage-icon{width:30px;height:30px}.item-copy h3,.person-heading h3{color:#fff;font:18px/1.15 Russo,sans-serif;letter-spacing:.005em}.item-copy p{color:#b5c8e5;font:14px/1.35 system-ui,sans-serif}
+.item-level{display:flex;align-items:center;gap:10px;margin-top:7px}.item-count{color:#ffde56!important;font:11px/1.2 Russo,sans-serif!important;letter-spacing:.025em}.level-meter{display:flex;gap:3px}.level-meter i{display:block;width:14px;height:6px;transform:skewX(-18deg);background:#52627a}.level-meter i.is-filled{background:#ffcf25;box-shadow:0 0 5px #ffca3455}
+.metric-next{color:#9deab8;font-weight:700;white-space:nowrap}
+.buy,.demo-button{min-width:130px;min-height:45px;padding:8px 14px;border:2px solid #ffec80;border-radius:12px;background:linear-gradient(#ffe85b 0%,#ffd21b 52%,#ffb511 100%);box-shadow:inset 0 2px 0 #fff6b8,0 4px 0 #a86109;color:#111a2e;font:14px/1.05 Russo,sans-serif;text-align:center}
+.buy small{display:block;margin-top:4px;color:#604519;font:12px/1 Russo,sans-serif}.buy:disabled,.secondary:disabled{border-color:#5c6985;background:#36435e;box-shadow:none;color:#b3bfd0;opacity:.66}.buy:disabled small{color:inherit}
+.secondary{min-height:37px;border:2px solid #7592bd;border-radius:10px;background:#293f6b;color:#f3f8ff;font:12px/1.15 Russo,sans-serif;box-shadow:0 3px 0 #0b1734}.secondary:hover:not(:disabled){background:#3c5b90}.dialog-actions{gap:11px;margin:19px 0}.dialog-actions .demo-button,.dialog-actions .secondary{padding:11px 16px}
+
+/* Personnel read like a pit crew roster, rather than disconnected cards. */
+.summary-strip{padding:13px 16px;border:1px solid #688bbb;border-left:6px solid #ffb51c;border-radius:10px;background:#102342;color:#e4f5ff;font:12px/1.5 Russo,sans-serif;letter-spacing:.02em}
+.staff-list{gap:0;overflow:hidden;border:2px solid #4d6c9f;border-radius:15px;background:#101d3b}.person{padding:14px 16px;border:0;border-bottom:1px solid #405883;border-radius:0;background:transparent}.person:last-child{border-bottom:0}.person-active{background:linear-gradient(90deg,#223c62 0%,transparent 75%)}
+.person-icon{display:grid;place-items:center;flex:none;width:43px;height:43px;border:2px solid #6a91bd;border-radius:50%;background:#20395e;color:#ffe078}.person-icon .garage-icon{width:25px;height:25px}.person-heading>div{flex:1;min-width:0}.person-heading h3{font-size:16px;margin:0 0 4px}.person-heading p{margin:2px 0;color:#b9cce6;font:13px/1.3 system-ui,sans-serif}.tag{border:1px solid #8290a7;border-radius:7px;background:#344257;color:#dbe3ee;font:10px/1 Russo,sans-serif}.tag-active{border-color:#75d8ad;background:#214d49;color:#b6f7d0}.energy-track{height:8px;border:1px solid #465f82;background:#0a152c}.energy-track span{background:linear-gradient(90deg,#42d3ae,#b8ed70)}.person-actions .secondary{font-size:11px}
+
+/* Tyre colors and pit timing receive their own visual language. */
+.tyre-icon{width:54px;height:54px;border-width:8px;border-color:#303b4e;background:#0d1522;box-shadow:inset 0 0 0 4px var(--tyre-color),0 3px 0 #070d1b}.tyre-selected{background:linear-gradient(90deg,#223d60,transparent 78%)}.tyre-selected .item-count{color:#a8efca!important}
+.tyre-actions{max-width:285px;gap:7px}.tyre-actions .buy{min-width:96px}.tyre-actions .secondary{min-height:45px;font-size:11px}
+.strategy-form{padding:14px;border-top:4px solid #ffbe18;border-radius:9px;background:#10213d}.strategy-form label{gap:7px;color:#a8c1e3;font:10px/1.2 Russo,sans-serif}.strategy-form input,.strategy-form select{border-color:#6e91bf;border-radius:8px;background:#1d3155}.forecast{position:relative;padding:16px 18px 16px 23px;border:1px solid #6088b9;border-radius:10px;background:#1c345a}.forecast::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:9px 0 0 9px;background:#ffbd1c}.forecast strong{color:#fff;font:16px/1.4 Russo,sans-serif}
+.drill-header{padding:14px;border-radius:13px;background:#112240}.drill-header strong{font-size:15px}.drill-timer{border:2px solid #fff1a0;box-shadow:0 3px 0 #a96b0d}.wheel-grid{position:relative;gap:12px}.wheel-card{position:relative;min-height:98px;padding:12px 14px 12px 68px;border:2px solid #6b8dc0;border-radius:13px;background:#22375b;box-shadow:0 3px 0 #0b1731}.wheel-card::before{content:'';position:absolute;top:50%;left:14px;width:37px;height:37px;transform:translateY(-50%);border:7px solid #1b2230;border-radius:50%;background:#101827;box-shadow:inset 0 0 0 2px #98a4b8,0 0 0 2px #485975}.wheel-card:not(:disabled):hover{border-color:#ffdf52}.wheel-card.wheel-done{border-color:#65ddb2;background:#174c49}.wheel-card strong{font-size:14px}.wheel-card small{font-size:12px}.mode-icon{display:grid;place-items:center;width:75px;height:75px;border:2px solid #709ed3;border-radius:19px;background:#263e69;color:#ffe16a}.mode-icon svg{width:44px;height:44px}
+
+@media (max-aspect-ratio:1/1){
+ .topbar{pointer-events:none}.topbar .add-coins,.topbar .settings{pointer-events:auto}
+ .action-card{border-color:#70d4ff}.action-card::before{height:25%;background:repeating-linear-gradient(120deg,#8b5cc122 0 25px,transparent 25px 50px)}
+ .upgrade-illustration{right:7%;top:10%;width:37%;height:75%}.upgrade-illustration svg{width:100%;height:100%}
+ .mode-buttons button{font-size:15px}.card-hint{letter-spacing:.06em}
+}
+@media (max-width:600px){
+ .dialog{width:min(95vw,800px);max-height:88dvh;padding:18px 17px 23px;border-radius:21px}.dialog-heading{top:-18px;min-height:58px;margin:-8px -4px 15px;padding:10px 4px 12px;gap:8px}.dialog-heading h2{max-width:calc(100% - 132px);font-size:clamp(19px,5.5vw,27px)}.dialog-heading h2::before{width:35px;height:4px;margin-bottom:7px}.dialog-tools{gap:6px}.dialog-balance{gap:4px;padding:6px;font-size:12px}.dialog-balance span{width:20px;height:20px;font-size:10px}.close{width:39px;height:39px}.notice:not(:empty){top:54px}.dialog-intro{font-size:14px;margin-bottom:14px}
+ .list-heading{padding:0 10px 7px;font-size:9px}.item{min-height:86px;gap:9px;padding:11px 10px}.item-icon{width:42px;height:42px;border-radius:11px}.garage-icon{width:24px;height:24px}.item-copy h3{font-size:15px}.item-copy p{font-size:12px}.item-count{font-size:10px!important}.level-meter{gap:2px}.level-meter i{width:9px;height:5px}.buy{min-width:91px;padding:7px 9px;font-size:12px}.buy small{font-size:10px}.tyre-icon{width:42px;height:42px;border-width:6px}.tyre-actions{max-width:none}.tyre-actions .buy{min-width:91px}.person{padding:11px 10px}.person-icon{width:38px;height:38px}.person-icon .garage-icon{width:22px;height:22px}.person-heading h3{font-size:15px}.person-heading p{font-size:11px}.person-actions{gap:6px}.person-actions .secondary{font-size:10px}.strategy-form{gap:9px}.forecast strong{font-size:14px}.wheel-card{min-height:83px;padding:10px 8px 10px 46px}.wheel-card::before{left:9px;width:26px;height:26px;border-width:5px}.wheel-card strong{font-size:12px}.wheel-card small{font-size:11px}
+}
+@media (max-width:340px){.top-right{gap:3px}.wallet{padding:3px 4px;gap:3px}.coin{width:26px;height:26px;font-size:14px}.hud-caption{font-size:7px}.wallet strong{font-size:12px}.add-coins{width:25px;height:26px}.clock{padding:0 5px;font-size:10px}.clock svg{display:none}.settings{padding:0 6px}.settings svg{width:23px;height:23px}.dialog-heading h2{font-size:18px}.dialog-balance{font-size:11px}.item{gap:7px}.item-icon{width:35px;height:38px}.item-copy h3{font-size:14px}.item-level{flex-wrap:wrap;gap:3px 7px}.item-level .item-count{white-space:nowrap}.buy{min-width:80px;font-size:11px}}
+
+/* The upgrade artwork uses its transparent canvas for consistent visual centering. */
+.upgrade-list .item-icon { display: grid; place-items: center; }
+.upgrade-icon-image { display: block; width: 82%; height: 82%; object-fit: contain; object-position: center; }
+
+/* Align visible strokes, accounting for transparent margins in the artwork. */
+.upgrade-icon-image[src*='-simple.png'] { transform: translateY(-2.2%); }
+
+/* Currency artwork is shared by the balance and every price. */
+.currency-icon { object-fit: contain; vertical-align: middle; flex: none; }
+.wallet .coin { display: block; border: 0; border-radius: 0; background: none; box-shadow: none; }
+.dialog-coin { width: 23px; height: 23px; }
+.price-coin { display: inline-block; width: 1.5em; height: 1.5em; }
+.wallet-balance .price-coin { width: 1.2em; height: 1.2em; }
+@media (max-aspect-ratio: 1/1) { .dialog-coin { width: 20px; height: 20px; } }
+
+/* Centre the currency and amount in upgrade and hiring buttons. */
+.upgrade-list .buy, .hire-list .buy { display: grid; place-items: center; }
+.purchase-price { display: inline-flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; }
+.purchase-price .price-coin { width: 1.5em; height: 1.5em; }

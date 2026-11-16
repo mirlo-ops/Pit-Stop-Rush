@@ -1,0 +1,60 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "leaderboards": {
+      "global": {
+        ".read": "auth != null",
+        ".indexOn": [
+          "bestTime"
+        ],
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid && newData.exists() && (!data.exists() || newData.child('bestTime').val() <= data.child('bestTime').val())",
+          ".validate": "newData.hasChildren(['name', 'bestTime', 'medal', 'version'])",
+          "name": {
+            ".validate": "newData.isString() && newData.val().length <= 40"
+          },
+          "bestTime": {
+            ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 86400"
+          },
+          "medal": {
+            ".validate": "newData.val() === 'gold' || newData.val() === 'silver' || newData.val() === 'bronze'"
+          },
+          "$other": {
+            ".validate": false
+          },
+          "version": {
+            ".validate": "newData.isNumber() && newData.val() === 2"
+          }
+        }
+      },
+      "daily": {
+        "$date": {
+          ".read": "auth != null",
+          ".indexOn": [
+            "bestTime"
+          ],
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid && newData.exists() && (!data.exists() || newData.child('bestTime').val() <= data.child('bestTime').val())",
+            ".validate": "newData.hasChildren(['name', 'bestTime', 'medal', 'version'])",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length <= 40"
+            },
+            "bestTime": {
+              ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 86400"
+            },
+            "medal": {
+              ".validate": "newData.val() === 'gold' || newData.val() === 'silver' || newData.val() === 'bronze'"
+            },
+            "$other": {
+              ".validate": false
+            },
+            "version": {
+              ".validate": "newData.isNumber() && newData.val() === 2"
+            }
+          }
+        }
+      }
+    }
+  }
+}
